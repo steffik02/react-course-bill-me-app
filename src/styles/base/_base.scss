@@ -1,0 +1,25 @@
+// rem size units: better support for accessiblity, so they can customize 
+//their own font size
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+}
+
+// this sets up the cursor to appear when over an active button, and return when
+// over a disabled button
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.is-active {
+    font-weight: bold;
+}

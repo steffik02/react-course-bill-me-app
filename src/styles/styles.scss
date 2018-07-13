@@ -1,0 +1,6 @@
+
+//provide the path to partials to import
+//when importing a partial, leave off the underscore and the extension
+//settings has to be imported first for other files to use it
+@import './base/settings';
+@import './base/base';

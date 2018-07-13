@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render the NotFound component 1`] = `
+<div>
+  Oh no! You must be lost! Drop and give me 404 pushups, then check your URL again! Or just 
+  <Link
+    replace={false}
+    to="/"
+  >
+    return to the home page
+  </Link>
+   :)
+</div>
+`;
