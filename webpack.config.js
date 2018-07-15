@@ -8,7 +8,7 @@ module.exports = (env) => {
             entry: './src/app.js',
         output: {
             //the path is the absolute path on your machine, so we use __dirname to get to our current directory
-            path: path.join(__dirname, "public"),
+            path: path.join(__dirname, "public", "dist"),
             filename: 'bundle.js'
         },
         // loader: lets you customize the behavior
@@ -47,7 +47,8 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, "public"),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: '/dist/'
         }
     };
 };
