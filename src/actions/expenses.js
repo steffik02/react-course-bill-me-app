@@ -41,7 +41,7 @@ export const removeExpense = ({ id } = {}) => ({
     // to test this you can just try to fetch it, call val on the snapshot, and if no data null will be return value
 //use startRemoveExpense in EditExpensePage instead of removeExpense
 //Adjust EditExpensePage tests
-export const startRemoveExpense = ( {id} = {}) => {
+export const startRemoveExpense = ({ id } = {}) => {
     return (dispatch) => {
         return database.ref(`expenses/${id}`).remove().then(() => {
             dispatch(removeExpense({id}));
@@ -55,6 +55,14 @@ export const editExpense = (id, updates) => ({
     id,
     updates
 });
+
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(editExpense(id, updates));
+        });
+    };
+};
 
 // SET_EXPENSES
 export const setExpenses = (expenses) => ({

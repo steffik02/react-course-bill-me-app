@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { editExpense, startRemoveExpense } from '../actions/expenses';
+import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 // Refactor page to be class based component, pull out inline functions to methods 
 // Set up mapDispatchToProps, we need 2 things on the returned object, not just 1: editExpense and removeExpense
@@ -10,7 +10,7 @@ export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
         //dispatch the action to edit the expense
         // props.dispatch(editExpense(props.expense.id, expense));
-        this.props.editExpense(this.props.expense.id, expense);
+        this.props.startEditExpense(this.props.expense.id, expense);
         //redirect to the dashboard
         this.props.history.push('/');
     }
@@ -42,7 +42,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, props) => ({
-    editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+    startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
     startRemoveExpense: (id) => dispatch(startRemoveExpense(id))
 });
 
