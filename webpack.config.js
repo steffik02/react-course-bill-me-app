@@ -16,7 +16,7 @@ module.exports = (env) => {
     const isProduction = env ==="production";
     const CSSExtract = new ExtractTextPlugin('styles.css');
     return {
-            entry: './src/app.js',
+            entry: ['babel-polyfill', './src/app.js'],
         output: {
             //the path is the absolute path on your machine, so we use __dirname to get to our current directory
             path: path.join(__dirname, "public", "dist"),

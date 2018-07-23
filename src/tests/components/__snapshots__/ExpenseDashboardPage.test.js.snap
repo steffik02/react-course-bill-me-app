@@ -2,7 +2,6 @@
 
 exports[`Should render ExpenseDashboardPage component 1`] = `
 <div>
-  This dashboard will help you steer your expense spaceship into financial freedom.
   <Connect(ExpensesSummary) />
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />

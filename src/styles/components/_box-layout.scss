@@ -1,0 +1,28 @@
+.box-layout {
+    //center top-bottom
+    align-items: center;
+    background: url('/images/bg.jpeg');
+    //always cover the container with the image (responsive)
+    background-size: cover;
+    display: flex;
+    // 100% of viewport height/width
+    height: 100vh;
+    // center l-r
+    justify-content: center;
+    width: 100vw;
+}
+
+.box-layout__box {
+    // fade-out create slightly transparent background, fade out 15%
+    background: fade-out($color:white, $amount: .15);
+    //soften the corners
+    border-radius: 3px;
+    padding: $l-size $m-size;
+    text-align: center;
+    width: 25rem;
+}
+
+.box-layout__title {
+    line-height: 1;
+    margin: 0 0 $m-size 0;
+}

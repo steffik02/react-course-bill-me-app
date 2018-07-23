@@ -8,11 +8,11 @@ import numeral from 'numeral';
 //wire up onClick
 
 export default ({id, description, amount, createdAt}) => (
-    <div>
-        <Link to={'/edit/' + id}>
-            <h3>Description: {description}</h3>
+        <Link className="list-item" to={'/edit/' + id}>
+            <div>
+                <h3 className="list-item__title">{description}</h3>
+                <span className="list-item__sub-title">Date Due: {moment(createdAt).format('MMMM D, YYYY')}</span>
+            </div>
+            <h3 className="list-item__data">{numeral(amount / 100).format('$0,0.00')}</h3>
         </Link>
-        <p>Amount: {numeral(amount / 100).format('$0,0.00')}</p>
-        <p>Date Due: {moment(createdAt).format('MMMM D, YYYY')}</p>
-    </div>
 );

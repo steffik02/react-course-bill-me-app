@@ -14,22 +14,29 @@ export class EditExpensePage extends React.Component {
         //redirect to the dashboard
         this.props.history.push('/');
     }
-    onClick = () => {
+    onDelete = () => {
         // props.dispatch(removeExpense({ id: props.expense.id }));
         this.props.startRemoveExpense({ id: this.props.expense.id });
         this.props.history.push('/');
-    }
+    };
     render () {
         return (
             <div>
-                <p>This is where you edit your expenses. I will be editing mine to ZERO!</p>
-                <ExpenseForm 
-                    expense={this.props.expense}
-                    onSubmit={this.onSubmit}
-                />
-                <button onClick={this.onClick}>
-                    Remove
-                </button>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Edit Expense: <span>{this.props.expense.description}</span></h1>
+                        <p>This is where you edit your expenses. I will be editing mine to ZERO!</p>
+                        </div>
+                    </div>    
+                <div className="content-container">
+                    <ExpenseForm 
+                        expense={this.props.expense}
+                        onSubmit={this.onSubmit}
+                    />
+                    <button className="button button--secondary" onClick={this.onDelete}>
+                        Delete Expense
+                    </button>
+                </div>
             </div>
         );
     }
